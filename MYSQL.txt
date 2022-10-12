@@ -1,5 +1,11 @@
+-- IMDB Design a DB for IMDB 1. Movie should have multiple media(Video or Image) 2. Movie can belongs to multiple Genre 3. Movie can have multiple reviews and Review can belongs to a user 4. Artist can have multiple skills 5. Artist can perform multiple role in a single film
+
+-- STARTING OF IMDB Design
+
 CREATE DATABASE IMDB;
+
 -- 1)Movie should have multiple media
+
 CREATE TABLE Movie (
     Movie_id INT PRIMARY KEY AUTO_INCREMENT,
     Movie_name VARCHAR(255) NOT NULL,
@@ -24,6 +30,7 @@ SELECT * FROM Media;
 SELECT * FROM movie  INNER JOIN media ON movie.Movie_id=media.Movie_id;
 
 -- 2)Movie can belongs to multiple Genre
+
 CREATE TABLE Genre (
     GenreID INT PRIMARY KEY AUTO_INCREMENT,
     Genre VARCHAR(255)
