@@ -14,7 +14,10 @@ CREATE TABLE Movie (
     Release_date VARCHAR(255),
     Language VARCHAR(255)
 );
-INSERT INTO Movie(Movie_name,Director,Movie_length,Release_date,Language) VALUES("PS-1","ManiRatnam","145_min",30-09-2022,"Tamil"),("KGF-1","PrashanthNeel","135_min",20-12-2018,"Kannada");
+INSERT INTO Movie(Movie_name,Director,Movie_length,Release_date,Language) VALUES 
+("PS-1","ManiRatnam","145_min",30-09-2022,"Tamil"),
+("KGF-1","PrashanthNeel","135_min",20-12-2018,"Kannada");
+
 SELECT * FROM Movie;
 CREATE TABLE Media (
     Media_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -25,7 +28,11 @@ CREATE TABLE Media (
     FOREIGN KEY (Movie_id)
         REFERENCES Movie (Movie_id)
 );
-INSERT INTO Media(Media,Type,URL,Movie_id) VALUES ("Image1","img.jpg","https://images.news18.com/ibnlive/uploads/2022/09/ps1.jpg",1),("Vedio","vs.mp4","https://www.youtube.com/watch?v=Oh5sU8YzF1A",1),("Vedio","Vs.mp4","https://www.youtube.com/watch?v=3oxo-wacE50",2);
+INSERT INTO Media(Media,Type,URL,Movie_id) VALUES
+("Image1","img.jpg","https://images.news18.com/ibnlive/uploads/2022/09/ps1.jpg",1),
+("Vedio","vs.mp4","https://www.youtube.com/watch?v=Oh5sU8YzF1A",1),
+("Vedio","Vs.mp4","https://www.youtube.com/watch?v=3oxo-wacE50",2);
+
 SELECT * FROM Media;
 SELECT * FROM movie  INNER JOIN media ON movie.Movie_id=media.Movie_id;
 
@@ -36,6 +43,7 @@ CREATE TABLE Genre (
     Genre VARCHAR(255)
 );
 INSERT INTO Genre(Genre) VALUES ("Adventure"),("Thriller"),("Action"),("Love");
+
 SELECT * FROM Genre;
 CREATE TABLE Movie_Genre (
     ID INT PRIMARY KEY AUTO_INCREMENT,
